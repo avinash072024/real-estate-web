@@ -1,0 +1,104 @@
+<!-- <nav class="navbar navbar-expand-lg fixed-top transition-all"
+    [ngClass]="isScrolled ? 'nav-scrolled shadow-sm' : 'nav-transparent'">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3" routerLink="/">
+            <i class="bi bi-real-estate text-primary me-2"></i>
+            <span class="logo-text">LUXE<span class="text-primary">ESTATE</span></span>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" (click)="isMenuOpen = !isMenuOpen"
+            data-bs-toggle="collapse" data-bs-target="#navRes">
+            <i class="bi" [ngClass]="isMenuOpen ? 'bi-x-lg' : 'bi-list'"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navRes">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
+                <li class="nav-item">
+                    <a class="nav-link px-4 rounded-pill" routerLink="/home" routerLinkActive="active-pill"
+                        [routerLinkActiveOptions]="{exact: true}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 rounded-pill" routerLink="/properties"
+                        routerLinkActive="active-pill">Properties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 rounded-pill" routerLink="/about" routerLinkActive="active-pill">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 rounded-pill" routerLink="/contact"
+                        routerLinkActive="active-pill">Contact</a>
+                </li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-link nav-link p-0 theme-icon" (click)="toggleTheme()">
+                    <i class="bi fs-5" [class.bi-moon-stars-fill]="!isDarkMode" [class.bi-sun-fill]="isDarkMode"></i>
+                </button>
+                <button class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm">Post Ad</button>
+                <button class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">List Property</button>
+            </div>
+        </div>
+    </div>
+</nav> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg fixed-top transition-all"
+    [ngClass]="isScrolled ? 'nav-scrolled shadow-sm' : 'nav-transparent'">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3" routerLink="/" (click)="closeMenu()">
+            <i class="bi bi-houses-fill text-primary me-2"></i>
+            <span class="logo-text">MODERN<span class="text-primary">NEST</span></span>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav" #navbarCollapse>
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2 mt-3 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link px-4 rounded-pill" routerLink="/home" routerLinkActive="active-pill"
+                        [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 rounded-pill" routerLink="/properties" routerLinkActive="active-pill"
+                        (click)="closeMenu()">Properties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 rounded-pill" routerLink="/about" routerLinkActive="active-pill"
+                        (click)="closeMenu()">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 rounded-pill" routerLink="/contact" routerLinkActive="active-pill"
+                        (click)="closeMenu()">Contact</a>
+                </li>
+            </ul>
+
+            <div class="d-flex align-items-center justify-content-center gap-3 pb-3 pb-lg-0">
+                <button class="btn btn-link nav-link p-1 rounded-pill" (click)="toggleTheme()">
+                    <i class="bi fs-5"
+                        [ngClass]="isDarkMode ? 'bi-sun-fill text-warning' : 'bi-moon-stars-fill text-primary'"></i>
+                </button>
+                <button class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">List Property</button>
+            </div>
+        </div>
+    </div>
+</nav>

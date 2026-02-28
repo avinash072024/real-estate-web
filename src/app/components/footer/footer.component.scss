@@ -1,0 +1,71 @@
+.footer {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-emphasis-color);
+
+    // Custom borders for better definition in Dark Mode
+    border-top: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.08) !important;
+}
+
+// Hover effects for links
+.footer-links {
+    li {
+        margin-bottom: 0.6rem;
+
+        a {
+            text-decoration: none;
+            color: var(--bs-secondary-color);
+            font-size: 0.9rem;
+            padding: 0.2rem 0.8rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-left: -0.8rem; // Align with text after padding
+
+            &:hover {
+                background-color: rgba(var(--bs-primary-rgb), 0.1);
+                color: var(--bs-primary) !important;
+                transform: translateX(5px);
+            }
+        }
+    }
+}
+
+// Social Icons Design
+.social-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(var(--bs-emphasis-color-rgb), 0.05);
+    color: var(--bs-emphasis-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+
+    &:hover {
+        background-color: var(--bs-primary);
+        color: white !important;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(var(--bs-primary-rgb), 0.3);
+    }
+}
+
+// Newsletter Input Styling
+.custom-newsletter {
+    .form-control {
+        background-color: rgba(var(--bs-emphasis-color-rgb), 0.03);
+        border-color: rgba(var(--bs-emphasis-color-rgb), 0.1);
+        color: var(--bs-emphasis-color);
+
+        &:focus {
+            box-shadow: none;
+            border-color: var(--bs-primary);
+            background-color: var(--bs-body-bg);
+        }
+    }
+}
+
+// Ensure the brand logo matches header theme
+.logo-text {
+    color: var(--bs-emphasis-color);
+}
