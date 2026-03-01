@@ -16,20 +16,6 @@ export class PropertyDetailsComponent implements OnInit {
 
   featuredProperty = Constants.MOCK_GALLERY_ITEMS;
 
-  // property = {
-  //   title: 'Modern Sunset Bungalow',
-  //   price: 1250000,
-  //   address: '452 Ocean View Dr, Malibu, CA',
-  //   description: 'Experience luxury living in this architectural masterpiece. Featuring floor-to-ceiling windows, a private infinity pool, and smart home integration throughout.',
-  //   specs: { beds: 4, baths: 3, sqft: 3200, garage: 2 },
-  //   images: [
-  //     'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200',
-  //     'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200',
-  //     'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200',
-  //     'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200'
-  //   ]
-  // };
-
   route = inject(ActivatedRoute);
 
   ngOnInit() {

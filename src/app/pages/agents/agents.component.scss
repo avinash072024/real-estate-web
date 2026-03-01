@@ -70,3 +70,36 @@
         background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
     }
 }
+
+.modal-content {
+    background-color: var(--bs-body-bg);
+    transition: background-color 0.3s ease;
+}
+
+// Modal body text line-height for readability
+.leading-relaxed {
+    line-height: 1.6;
+}
+
+// Ensure the scrollable body has nice padding in dark mode
+.modal-body {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--bs-primary-bg-subtle);
+        border-radius: 10px;
+    }
+}
+
+// Dark Mode Tweak for Modal
+[data-bs-theme='dark'] {
+    .modal-content {
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+}

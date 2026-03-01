@@ -2,10 +2,11 @@ import { Component, HostListener, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DisableRightClickDirective } from './directives/disable-right-click.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, DisableRightClickDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -43,8 +44,6 @@ export class AppComponent {
       event.preventDefault();
     }
   }
-
-  constructor() { }
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });

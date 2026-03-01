@@ -11,7 +11,13 @@ export class AgentsComponent implements OnInit {
 
   agents = Constants.MOCK_AGENT_ITEMS; // Show only first 4 agents on home page
 
+  selectedAgent: any = null;
+
   ngOnInit(): void {
+  }
+
+  openProfile(agent: any) {
+    this.selectedAgent = agent;
   }
 
 }

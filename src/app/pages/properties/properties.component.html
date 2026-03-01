@@ -7,7 +7,7 @@
                 <div class="mb-4">
                     <label class="form-label fw-semibold">BHK Type</label>
                     <div class="d-flex flex-wrap gap-2">
-                        @for (opt of ['1', '2', '3', '4+']; track opt) {
+                        @for (opt of ['1', '2', '3', '4', '5+']; track opt) {
                         <input type="checkbox" class="btn-check" [id]="'bhk'+opt">
                         <label class="btn btn-outline-primary btn-sm rounded-pill px-3" [for]="'bhk'+opt">{{opt}}
                             BHK</label>
@@ -15,24 +15,30 @@
                     </div>
                 </div>
 
-                <div class="mb-4">
+                <!-- <div class="mb-4">
                     <label class="form-label fw-semibold">Area (Sq.Ft)</label>
                     <input type="range" class="form-range" min="500" max="5000" step="100">
                     <div class="d-flex justify-content-between small text-muted">
                         <span>500</span><span>5000</span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Amenities</label>
-                    <div class="form-check mb-2">
+                    <!-- <div class="form-check mb-2">
                         <input class="form-check-input" type="checkbox" id="pool">
                         <label class="form-check-label" for="pool">Swimming Pool</label>
                     </div>
                     <div class="form-check mb-2">
                         <input class="form-check-input" type="checkbox" id="gym">
                         <label class="form-check-label" for="gym">Fitness Center</label>
+                    </div> -->
+                    @for (item of amenitiesList; track item.id) {
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" [id]="'amenity_'+item.name">
+                        <label class="form-check-label" [for]="'amenity_'+item.name">{{item.name}}</label>
                     </div>
+                    }
                 </div>
 
                 <button class="btn btn-primary w-100 rounded-pill py-2 fw-bold">Apply Filters</button>

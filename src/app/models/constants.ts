@@ -299,4 +299,6 @@ export class Constants {
             specialty: 'Expert in luxury property sales, helping clients find and purchase high-end homes with premium amenities and exclusive features.'
         },
     ];
+
+    public static MOCK_AMENITIES_LIST = ['Swimming Pool', 'Gym', 'Garden', 'Security', 'Parking', 'Elevator', 'Home Cinema', 'Solar Panels'];
 }

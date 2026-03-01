@@ -17,7 +17,8 @@
                         <div class="social-pills d-flex gap-2 mb-2">
                             <!-- <a href="#" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
                                     class="bi bi-linkedin"></i></a> -->
-                            <a href="mailto:{{agent.email}}?subject=Inquiry%20from%20Website" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
+                            <a href="mailto:{{agent.email}}?subject=Inquiry%20from%20Website"
+                                class="btn btn-light rounded-circle btn-sm shadow-sm"><i
                                     class="bi bi-envelope-fill"></i></a>
                             <a href="tel:{{agent.contact}}" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
                                     class="bi bi-telephone-fill"></i></a>
@@ -34,11 +35,75 @@
                         <span class="small text-muted">Experience</span>
                         <span class="small fw-bold">{{agent.experience}}</span>
                     </div>
-                    <button class="btn btn-outline-primary rounded-pill btn-sm w-100 mt-3 fw-semibold">View
-                        Profile</button>
+                    <button class="btn btn-outline-primary rounded-pill w-100 mt-3 fw-semibold"
+                        data-bs-toggle="modal" data-bs-target="#agentProfileModal" (click)="openProfile(agent)">
+                        View Profile
+                    </button>
                 </div>
             </div>
         </div>
         }
+    </div>
+</div>
+
+
+<div class="modal fade" id="agentProfileModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="agentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content rounded-5 border-0 shadow bg-body">
+
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold px-3 pt-3" id="agentModalLabel">Agent Profile</h5>
+                <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            @if (selectedAgent) {
+            <div class="modal-body p-4 p-lg-5">
+                <div class="row g-4">
+                    <div class="col-md-5 text-center">
+                        <img [src]="selectedAgent.img" [alt]="selectedAgent.name"
+                            class="img-fluid rounded-4 shadow-sm mb-3 w-100" style="height: 23rem; object-fit: cover;">
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="tel:{{selectedAgent.contact}}" class="btn btn-primary rounded-pill px-4"><i
+                                    class="bi bi-telephone-fill"></i></a>
+                            <a href="mailto:{{selectedAgent.email}}"
+                                class="btn btn-outline-primary rounded-pill px-4"><i
+                                    class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <h3 class="fw-bold mb-1">{{selectedAgent.name}}</h3>
+                        <p class="text-primary fw-semibold mb-3">{{selectedAgent.role}}</p>
+
+                        <div class="bg-body-tertiary p-3 rounded-4 mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted small">Specialty</span>
+                                <span class="fw-bold small">Residential</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted small">Experience</span>
+                                <span class="fw-bold small">{{selectedAgent.experience}}</span>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold">Biography</h6>
+                        <p class="text-muted small leading-relaxed">
+                            {{selectedAgent.specialty || 'Highly dedicated professional committed to finding your dream home with years of expertise in the local real estate market.'}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            } @else {
+                <div class="text-center p-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            }
+
+            <div class="modal-footer border-0 p-4">
+                <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold">Schedule Meeting</button>
+            </div>
+        </div>
     </div>
 </div>

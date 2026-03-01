@@ -19,6 +19,14 @@ export class PropertiesComponent {
   //   // Add more items...
   // ];
 
+  // amenitiesList = ['Swimming Pool', 'Gym', 'Garden', 'Security', 'Parking', 'Elevator', 'Balcony', 'Fireplace', 'Air Conditioning', 'Solar Panels'];
+  // amenitiesList = Constants.MOCK_AMENITIES_LIST;
+
+  amenitiesList = Constants.MOCK_AMENITIES_LIST.map((item, index) => ({
+    id: index + 1,
+    name: item
+  }));
+
   properties = Constants.MOCK_GALLERY_ITEMS;
 
   toggleView(isGrid: boolean) {
