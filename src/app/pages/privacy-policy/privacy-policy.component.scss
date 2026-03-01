@@ -1,0 +1,43 @@
+.leading-relaxed {
+    line-height: 1.8;
+}
+
+.policy-content {
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+}
+
+.toc-nav {
+    .nav-link {
+        color: var(--bs-secondary-color);
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: rgba(var(--bs-primary-rgb), 0.05);
+            color: var(--bs-primary);
+        }
+
+        &.active {
+            background-color: var(--bs-primary) !important;
+            color: white !important;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.2);
+        }
+    }
+}
+
+// Typography fix for Dark Mode
+.logo-text {
+    color: var(--bs-emphasis-color);
+}
+
+section {
+    scroll-margin-top: 120px; // Offsets the sticky header
+}
+
+// Background refinement for Dark Mode
+[data-bs-theme='dark'] {
+    .bg-body-tertiary {
+        background-color: rgba(255, 255, 255, 0.03) !important;
+    }
+}

@@ -169,17 +169,8 @@ export class Constants {
         socials: { linkedin: '#', instagram: '#' },
         specialty: 'Specializes in investment properties and off-plan sites, with a strong background in analyzing market trends and identifying profitable opportunities.'
     },
-    // {
-    //     id: 5,
-    //     name: 'Amara Okafor',
-    //     role: 'Urban Loft Specialist',
-    //     experience: '6 Years',
-    //     img: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2a04?w=400&q=80',
-    //     socials: { linkedin: '#', instagram: '#' },
-    //     specialty: 'Dedicated to urban living, Amara connects clients with modern lofts and converted industrial spaces in the heart of the city.'
-    // },
     {
-        id: 6,
+        id: 5,
         name: 'Jameson Blake',
         role: 'Waterfront Property Expert',
         experience: '15 Years',
@@ -188,7 +179,7 @@ export class Constants {
         specialty: 'Specializes in coastal mansions and lakefront estates, ensuring clients find serene homes with breathtaking views and private docks.'
     },
     {
-        id: 7,
+        id: 6,
         name: 'Sophie Laurent',
         role: 'Historic Home Specialist',
         experience: '9 Years',
@@ -197,7 +188,7 @@ export class Constants {
         specialty: 'Expert in heritage properties and architectural gems, providing deep insights into restoration potential and historical significance.'
     },
     {
-        id: 8,
+        id: 7,
         name: 'Robert Miller',
         role: 'Industrial Asset Manager',
         experience: '11 Years',
@@ -206,7 +197,7 @@ export class Constants {
         specialty: 'Focuses on large-scale industrial warehouses and distribution centers, optimizing logistics and investment returns for corporate clients.'
     },
     {
-        id: 9,
+        id: 8,
         name: 'Maya Patel',
         role: 'Sustainable Housing Advocate',
         experience: '4 Years',
@@ -215,7 +206,7 @@ export class Constants {
         specialty: 'Passionate about eco-friendly architecture and LEED-certified homes, helping environmentally conscious buyers find green living spaces.'
     },
     {
-        id: 10,
+        id: 9,
         name: 'Liam Thompson',
         role: 'Suburban Relocation Expert',
         experience: '7 Years',
@@ -224,7 +215,7 @@ export class Constants {
         specialty: 'Helps families transition from city living to the suburbs, focusing on school districts, community safety, and spacious backyard living.'
     },
     {
-        id: 11,
+        id: 10,
         name: 'Chloe Dubois',
         role: 'Penthouse Consultant',
         experience: '10 Years',
@@ -233,7 +224,7 @@ export class Constants {
         specialty: 'Provides exclusive access to sky-high luxury living, specializing in panoramic views and premium amenities in metropolitan skyscrapers.'
     },
     {
-        id: 12,
+        id: 11,
         name: 'Daniel Kim',
         role: 'Retail Space Strategist',
         experience: '14 Years',
@@ -242,7 +233,7 @@ export class Constants {
         specialty: 'Strategic advisor for retail brands, identifying high-traffic locations and negotiating lease terms for storefronts and shopping centers.'
     },
     {
-        id: 13,
+        id: 12,
         name: 'Isabella Rossi',
         role: 'Vacation Rental Expert',
         experience: '6 Years',
@@ -251,7 +242,7 @@ export class Constants {
         specialty: 'Specializes in properties with high short-term rental yields, guiding investors through the nuances of the holiday home market.'
     },
     {
-        id: 14,
+        id: 13,
         name: 'Nathaniel West',
         role: 'Rural Land Broker',
         experience: '20 Years',
@@ -259,17 +250,8 @@ export class Constants {
         socials: { linkedin: '#', instagram: '#' },
         specialty: 'Expert in acreage, ranch land, and agricultural properties, offering unmatched knowledge of land rights and zoning regulations.'
     },
-    // {
-    //     id: 15,
-    //     name: 'Zoe Fischer',
-    //     role: 'First-Time Buyer Coach',
-    //     experience: '3 Years',
-    //     img: 'https://images.unsplash.com/photo-1598550874175-4d0fe4a2c90b?w=400&q=80',
-    //     socials: { linkedin: '#', instagram: '#' },
-    //     specialty: 'Dedicated to simplifying the home-buying process for beginners, offering educational workshops and personalized financial guidance.'
-    // },
     {
-        id: 16,
+        id: 14,
         name: 'Victor Vance',
         role: 'Foreclosure & REO Specialist',
         experience: '13 Years',

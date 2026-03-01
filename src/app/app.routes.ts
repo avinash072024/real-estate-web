@@ -6,6 +6,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AgentsComponent } from './pages/agents/agents.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +28,15 @@ export const routes: Routes = [
     },
     {
         path: 'agents', component: AgentsComponent, title: `Our Agents | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'contact', component: ContactComponent, title: `Contact Us | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'privacy-policy', component: PrivacyPolicyComponent, title: `Privacy Policy | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'terms-of-use', component: TermsConditionsComponent, title: `Terms of Use | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
     },
     {
         path: '**', component: NotFoundComponent, title: `404 - Not Found | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
