@@ -7,7 +7,7 @@
         </p>
     </div>
 
-    <div class="row g-4">
+    <div class="row g-4 d-flex justify-content-center align-items-center">
         @for (agent of agents; track agent.id) {
         <div class="col-sm-6 col-lg-3">
             <div class="agent-card rounded-4 overflow-hidden border-0 shadow-sm bg-body">
@@ -15,12 +15,12 @@
                     <img [src]="agent.img" [alt]="agent.name" class="w-100 agent-img">
                     <div class="agent-overlay d-flex align-items-end justify-content-center p-3">
                         <div class="social-pills d-flex gap-2 mb-2">
-                            <a href="#" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
-                                    class="bi bi-linkedin"></i></a>
-                            <a href="#" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
+                            <!-- <a href="#" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
+                                    class="bi bi-linkedin"></i></a> -->
+                            <a href="mailto:{{agent.email}}?subject=Inquiry%20from%20Website" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
                                     class="bi bi-envelope-fill"></i></a>
-                            <a href="#" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
-                                    class="bi bi-whatsapp"></i></a>
+                            <a href="tel:{{agent.contact}}" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
+                                    class="bi bi-telephone-fill"></i></a>
                         </div>
                     </div>
                 </div>

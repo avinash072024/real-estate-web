@@ -133,131 +133,170 @@ export class Constants {
     ];
 
     public static MOCK_AGENT_ITEMS = [
-    {
-        id: 1,
-        name: 'Sarah Wilson',
-        role: 'Luxury Villa Expert',
-        experience: '8 Years',
-        img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Specializes in high-end villas and estates, with a deep understanding of the luxury real estate market and a proven track record of successful transactions.'
-    },
-    {
-        id: 2,
-        name: 'Marcus Chen',
-        role: 'Commercial Specialist',
-        experience: '12 Years',
-        img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Expert in commercial real estate, with extensive experience in office spaces, retail properties, and industrial facilities. Known for his strategic approach and strong negotiation skills.'
-    },
-    {
-        id: 3,
-        name: 'Elena Rodriguez',
-        role: 'Residential Consultant',
-        experience: '5 Years',
-        img: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Focuses on residential properties, including single-family homes, condos, and townhouses. Passionate about helping clients find their perfect home.'
-    },
-    {
-        id: 4,
-        name: 'David Smith',
-        role: 'Investment Advisor',
-        experience: '10 Years',
-        img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Specializes in investment properties and off-plan sites, with a strong background in analyzing market trends and identifying profitable opportunities.'
-    },
-    {
-        id: 5,
-        name: 'Jameson Blake',
-        role: 'Waterfront Property Expert',
-        experience: '15 Years',
-        img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Specializes in coastal mansions and lakefront estates, ensuring clients find serene homes with breathtaking views and private docks.'
-    },
-    {
-        id: 6,
-        name: 'Sophie Laurent',
-        role: 'Historic Home Specialist',
-        experience: '9 Years',
-        img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Expert in heritage properties and architectural gems, providing deep insights into restoration potential and historical significance.'
-    },
-    {
-        id: 7,
-        name: 'Robert Miller',
-        role: 'Industrial Asset Manager',
-        experience: '11 Years',
-        img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Focuses on large-scale industrial warehouses and distribution centers, optimizing logistics and investment returns for corporate clients.'
-    },
-    {
-        id: 8,
-        name: 'Maya Patel',
-        role: 'Sustainable Housing Advocate',
-        experience: '4 Years',
-        img: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Passionate about eco-friendly architecture and LEED-certified homes, helping environmentally conscious buyers find green living spaces.'
-    },
-    {
-        id: 9,
-        name: 'Liam Thompson',
-        role: 'Suburban Relocation Expert',
-        experience: '7 Years',
-        img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Helps families transition from city living to the suburbs, focusing on school districts, community safety, and spacious backyard living.'
-    },
-    {
-        id: 10,
-        name: 'Chloe Dubois',
-        role: 'Penthouse Consultant',
-        experience: '10 Years',
-        img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Provides exclusive access to sky-high luxury living, specializing in panoramic views and premium amenities in metropolitan skyscrapers.'
-    },
-    {
-        id: 11,
-        name: 'Daniel Kim',
-        role: 'Retail Space Strategist',
-        experience: '14 Years',
-        img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Strategic advisor for retail brands, identifying high-traffic locations and negotiating lease terms for storefronts and shopping centers.'
-    },
-    {
-        id: 12,
-        name: 'Isabella Rossi',
-        role: 'Vacation Rental Expert',
-        experience: '6 Years',
-        img: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Specializes in properties with high short-term rental yields, guiding investors through the nuances of the holiday home market.'
-    },
-    {
-        id: 13,
-        name: 'Nathaniel West',
-        role: 'Rural Land Broker',
-        experience: '20 Years',
-        img: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Expert in acreage, ranch land, and agricultural properties, offering unmatched knowledge of land rights and zoning regulations.'
-    },
-    {
-        id: 14,
-        name: 'Victor Vance',
-        role: 'Foreclosure & REO Specialist',
-        experience: '13 Years',
-        img: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=400&q=80',
-        socials: { linkedin: '#', instagram: '#' },
-        specialty: 'Expert in distressed property sales and bank-owned assets, helping clients navigate the complexities of foreclosure auctions and REO acquisitions.'
-    }
-];
+        {
+            id: 1,
+            name: 'Sarah Wilson',
+            role: 'Luxury Villa Expert',
+            email: 'sarah.wilson@modernnest.com',
+            contact: '+1 (555) 123-4567',
+            experience: '8 Years',
+            img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Specializes in high-end villas and estates, with a deep understanding of the luxury real estate market and a proven track record of successful transactions.'
+        },
+        {
+            id: 2,
+            name: 'Marcus Chen',
+            role: 'Commercial Specialist',
+            email: 'marcus.chen@modernnest.com',
+            contact: '+1 (555) 234-5678',
+            experience: '12 Years',
+            img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Expert in commercial real estate, with extensive experience in office spaces, retail properties, and industrial facilities. Known for his strategic approach and strong negotiation skills.'
+        },
+        {
+            id: 3,
+            name: 'Elena Rodriguez',
+            role: 'Residential Consultant',
+            email: 'elena.rodriguez@modernnest.com',
+            contact: '+1 (555) 345-6789',
+            experience: '5 Years',
+            img: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Focuses on residential properties, including single-family homes, condos, and townhouses. Passionate about helping clients find their perfect home.'
+        },
+        {
+            id: 4,
+            name: 'David Smith',
+            role: 'Investment Advisor',
+            email: 'david.smith@modernnest.com',
+            contact: '+1 (555) 456-7890',
+            experience: '10 Years',
+            img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Specializes in investment properties and off-plan sites, with a strong background in analyzing market trends and identifying profitable opportunities.'
+        },
+        {
+            id: 5,
+            name: 'Jameson Blake',
+            role: 'Waterfront Property Expert',
+            email: 'jameson.blake@modernnest.com',
+            contact: '+1 (555) 567-8901',
+            experience: '15 Years',
+            img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Specializes in coastal mansions and lakefront estates, ensuring clients find serene homes with breathtaking views and private docks.'
+        },
+        {
+            id: 6,
+            name: 'Sophie Laurent',
+            role: 'Historic Home Specialist',
+            email: 'sophie.laurent@modernnest.com',
+            contact: '+1 (555) 678-9012',
+            experience: '9 Years',
+            img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Expert in heritage properties and architectural gems, providing deep insights into restoration potential and historical significance.'
+        },
+        {
+            id: 7,
+            name: 'Robert Miller',
+            role: 'Industrial Asset Manager',
+            email: 'robert.miller@modernnest.com',
+            contact: '+1 (555) 789-0123',
+            experience: '11 Years',
+            img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Focuses on large-scale industrial warehouses and distribution centers, optimizing logistics and investment returns for corporate clients.'
+        },
+        {
+            id: 8,
+            name: 'Maya Patel',
+            role: 'Sustainable Housing Advocate',
+            email: 'maya.patel@modernnest.com',
+            contact: '+1 (555) 890-1234',
+            experience: '4 Years',
+            img: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Passionate about eco-friendly architecture and LEED-certified homes, helping environmentally conscious buyers find green living spaces.'
+        },
+        {
+            id: 9,
+            name: 'Liam Thompson',
+            role: 'Suburban Relocation Expert',
+            email: 'liam.thompson@modernnest.com',
+            contact: '+1 (555) 901-2345',
+            experience: '7 Years',
+            img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Helps families transition from city living to the suburbs, focusing on school districts, community safety, and spacious backyard living.'
+        },
+        {
+            id: 10,
+            name: 'Chloe Dubois',
+            role: 'Penthouse Consultant',
+            email: 'chloe.dubois@modernnest.com',
+            contact: '+1 (555) 012-3456',
+            experience: '10 Years',
+            img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Provides exclusive access to sky-high luxury living, specializing in panoramic views and premium amenities in metropolitan skyscrapers.'
+        },
+        {
+            id: 11,
+            name: 'Daniel Kim',
+            role: 'Retail Space Strategist',
+            email: 'daniel.kim@modernnest.com',
+            contact: '+1 (555) 123-4567',
+            experience: '14 Years',
+            img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Strategic advisor for retail brands, identifying high-traffic locations and negotiating lease terms for storefronts and shopping centers.'
+        },
+        {
+            id: 12,
+            name: 'Isabella Rossi',
+            role: 'Vacation Rental Expert',
+            email: 'isabella.rossi@modernnest.com',
+            contact: '+1 (555) 234-5678',
+            experience: '6 Years',
+            img: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Specializes in properties with high short-term rental yields, guiding investors through the nuances of the holiday home market.'
+        },
+        {
+            id: 13,
+            name: 'Nathaniel West',
+            role: 'Rural Land Broker',
+            email: 'nathaniel.west@modernnest.com',
+            contact: '+1 (555) 345-6789',
+            experience: '20 Years',
+            img: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Expert in acreage, ranch land, and agricultural properties, offering unmatched knowledge of land rights and zoning regulations.'
+        },
+        {
+            id: 14,
+            name: 'Victor Vance',
+            role: 'Foreclosure & REO Specialist',
+            email: 'victor.vance@modernnest.com',
+            contact: '+1 (555) 456-7890',
+            experience: '13 Years',
+            img: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Expert in distressed property sales and bank-owned assets, helping clients navigate the complexities of foreclosure auctions and REO acquisitions.'
+        },
+        {
+            id: 15,
+            name: 'Sophia Martinez',
+            role: 'Luxury Property Consultant',
+            email: 'sophia.martinez@modernnest.com',
+            contact: '+1 (555) 567-8901',
+            experience: '9 Years',
+            img: 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Expert in luxury property sales, helping clients find and purchase high-end homes with premium amenities and exclusive features.'
+        },
+    ];
 }

@@ -1,0 +1,42 @@
+.leading-relaxed {
+    line-height: 1.8;
+}
+
+.terms-wrapper {
+    // Respecting the manual theme change
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.08) !important;
+}
+
+.display-6 {
+    opacity: 0.3;
+    font-family: 'Inter', sans-serif;
+}
+
+section {
+    transition: all 0.3s ease;
+
+    &:hover {
+        .display-6 {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Ensure icons in list look clean
+.bi-check2-circle {
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+// Dark Mode Adjustments
+[data-bs-theme='dark'] {
+    .terms-wrapper {
+        background-color: var(--bs-body-tertiary-bg) !important;
+    }
+
+    .display-6 {
+        color: var(--bs-primary);
+        opacity: 0.2;
+    }
+}
