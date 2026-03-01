@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, Inject, inject, OnInit, PLATFORM_I
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Constants } from '../../models/constants';
 
 @Component({
   selector: 'app-header',
@@ -48,6 +49,11 @@ export class HeaderComponent implements OnInit {
 
   isScrolled = false;
   isDarkMode = false;
+
+  appName1: string = Constants.APP_NAME_STR1;
+  appName2: string = Constants.APP_NAME_STR2;
+
+  navLinks = Constants.NAV_LINKS;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

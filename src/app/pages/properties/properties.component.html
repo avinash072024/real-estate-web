@@ -1,1 +1,91 @@
-<p>properties works!</p>
+<div class="container py-5 mt-5">
+    <div class="row g-4">
+        <aside class="col-lg-3 d-none d-lg-block">
+            <div class="filter-card p-4 rounded-4 shadow-sm sticky-top" style="top: 100px;">
+                <h5 class="fw-bold mb-4">Advanced Filters</h5>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">BHK Type</label>
+                    <div class="d-flex flex-wrap gap-2">
+                        @for (opt of ['1', '2', '3', '4+']; track opt) {
+                        <input type="checkbox" class="btn-check" [id]="'bhk'+opt">
+                        <label class="btn btn-outline-primary btn-sm rounded-pill px-3" [for]="'bhk'+opt">{{opt}}
+                            BHK</label>
+                        }
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Area (Sq.Ft)</label>
+                    <input type="range" class="form-range" min="500" max="5000" step="100">
+                    <div class="d-flex justify-content-between small text-muted">
+                        <span>500</span><span>5000</span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Amenities</label>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="pool">
+                        <label class="form-check-label" for="pool">Swimming Pool</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="gym">
+                        <label class="form-check-label" for="gym">Fitness Center</label>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary w-100 rounded-pill py-2 fw-bold">Apply Filters</button>
+            </div>
+        </aside>
+
+        <main class="col-lg-9">
+            <div class="d-flex justify-content-between align-items-center mb-4 bg-body-tertiary p-3 rounded-4">
+                <span class="fw-semibold text-muted">{{properties.length}} Properties Found</span>
+                <!-- <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-light rounded-circle p-2" (click)="toggleView(true)"
+                        [class.active-btn]="isGridView">
+                        <i class="bi bi-grid-fill"></i>
+                    </button>
+                    <button class="btn btn-sm btn-light rounded-circle p-2" (click)="toggleView(false)"
+                        [class.active-btn]="!isGridView">
+                        <i class="bi bi-list-task"></i>
+                    </button>
+                </div> -->
+            </div>
+
+            <div class="row g-4">
+                @for (item of properties; track item.id) {
+                <div [ngClass]="isGridView ? 'col-md-6' : 'col-12'">
+                    <div class="property-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-body"
+                        [class.d-flex]="!isGridView">
+                        <div class="position-relative" [class.w-40]="!isGridView">
+                            <img [src]="item.img" class="object-fit-cover property-img w-100" [alt]="item.title">
+                            <span
+                                class="badge bg-white text-dark position-absolute top-0 end-0 m-3 rounded-pill shadow-sm">
+                                ${{item.price | number}}
+                            </span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-2">{{item.title}}</h5>
+                            <div class="d-flex gap-3 text-muted small mb-3">
+                                <span><i class="bi bi-door-open me-1"></i>{{item.bhk}} BHK</span>
+                                <span><i class="bi bi-aspect-ratio me-1"></i>{{item.sqft}} Sq.Ft</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-1 mb-4">
+                                @for (amenity of item.amenities; track amenity) {
+                                <span
+                                    class="badge bg-secondary-subtle text-secondary rounded-pill small">{{amenity}}</span>
+                                }
+                            </div>
+                            <a [routerLink]="['/property-details', item.id]" class="btn btn-outline-primary rounded-pill w-100 fw-semibold">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </main>
+    </div>
+</div>
+
+<app-agents />

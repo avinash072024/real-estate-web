@@ -1,0 +1,30 @@
+<section class="not-found-wrapper d-flex align-items-center justify-content-center">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="error-illustration mb-5">
+                    <div class="house-box">
+                        <i class="bi bi-house-dash-fill display-1 text-primary"></i>
+                        <span class="error-code">404</span>
+                    </div>
+                </div>
+
+                <h1 class="fw-bold mb-3 display-5 logo-text">Oops! You're Off the Map</h1>
+                <p class="text-muted mb-5 px-lg-5">
+                    The property or page you are looking for seems to have moved or never existed.
+                    Let’s get you back to familiar territory.
+                </p>
+
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <button (click)="goBack()"
+                        class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold transition-all">
+                        <i class="bi bi-arrow-left me-2"></i> Go Back
+                    </button>
+                    <a routerLink="/" class="btn btn-primary rounded-pill px-5 py-3 fw-bold shadow-sm transition-all">
+                        <i class="bi bi-house-door me-2"></i> Take Me Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

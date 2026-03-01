@@ -1,0 +1,37 @@
+.main-img {
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.side-img {
+    height: 242px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.booking-card {
+    background-color: var(--bs-body-bg);
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+    z-index: 1000 !important;
+}
+
+.map-placeholder {
+    height: 350px;
+    border-style: dashed !important;
+}
+
+.leading-relaxed {
+    line-height: 1.8;
+}
+
+// Dark Mode Overrides
+[data-bs-theme='dark'] {
+    .booking-card {
+        background-color: var(--bs-body-tertiary-bg);
+    }
+}

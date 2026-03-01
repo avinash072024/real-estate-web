@@ -1,0 +1,46 @@
+.filter-card {
+    background-color: var(--bs-body-bg);
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+    z-index: 1000 !important;
+}
+
+.property-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+.property-img {
+    min-height: 200px;
+    height: 17rem;
+}
+
+.active-btn {
+    background-color: var(--bs-primary) !important;
+    color: white !important;
+}
+
+// Layout for List View
+.w-40 {
+    width: 40%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+// Dark Mode Specifics
+[data-bs-theme='dark'] {
+    .property-card {
+        background-color: var(--bs-body-tertiary-bg) !important;
+    }
+
+    .btn-light {
+        background-color: #2b3035;
+        color: white;
+        border-color: #495057;
+    }
+}

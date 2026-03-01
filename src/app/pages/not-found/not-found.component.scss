@@ -1,0 +1,59 @@
+.not-found-wrapper {
+    min-height: 80vh; // Leaves room for header/footer
+    padding: 100px 0;
+}
+
+.error-illustration {
+    position: relative;
+
+    .house-box {
+        animation: floating 3s ease-in-out infinite;
+        display: inline-block;
+    }
+
+    .error-code {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 6rem;
+        font-weight: 900;
+        opacity: 0.1;
+        z-index: -1;
+        color: var(--bs-emphasis-color);
+    }
+}
+
+// Animations for modern feel
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.logo-text {
+    color: var(--bs-emphasis-color);
+}
+
+// Button Hover Effects
+.btn {
+    &.transition-all:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(var(--bs-primary-rgb), 0.25);
+    }
+}
+
+// Dark Mode Adjustments
+[data-bs-theme='dark'] {
+    .error-code {
+        opacity: 0.15;
+    }
+}

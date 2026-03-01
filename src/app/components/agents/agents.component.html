@@ -1,0 +1,43 @@
+<div class="container py-5 mt-5">
+    <div class="text-center mb-5">
+        <span class="text-primary fw-bold text-uppercase small">Meet the Experts</span>
+        <h1 class="fw-bold">Our Top Rated Agents</h1>
+        <p class="text-muted mx-auto" style="max-width: 600px;">
+            Our agents are dedicated to providing the best service and expertise to help you find your dream home.
+        </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        @for (agent of agents; track agent.id) {
+        <div class="col-sm-6 col-lg-4">
+            <div class="agent-card h-100 rounded-4 overflow-hidden border-0 shadow-sm bg-body">
+                <div class="position-relative overflow-hidden group">
+                    <img [src]="agent.img" class="agent-img w-100" [alt]="agent.name">
+                    <div class="agent-social-overlay d-flex gap-2 justify-content-center align-items-center">
+                        <a [href]="agent.socials.linkedin" class="btn btn-primary rounded-circle shadow"><i
+                                class="bi bi-linkedin"></i></a>
+                        <a [href]="agent.socials.instagram" class="btn btn-primary rounded-circle shadow"><i
+                                class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="p-4 text-center">
+                    <h5 class="fw-bold mb-1">{{agent.name}}</h5>
+                    <p class="text-primary small fw-semibold mb-3">{{agent.role}}</p>
+
+                    <div
+                        class="d-flex justify-content-between align-items-center bg-body-tertiary p-2 rounded-pill mb-4 px-3">
+                        <span class="small text-muted">Experience</span>
+                        <span class="small fw-bold">{{agent.experience}}</span>
+                    </div>
+
+                    <button
+                        class="btn btn-outline-primary rounded-pill w-100 py-2 fw-semibold transition-all hover-fill">
+                        Contact Agent
+                    </button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

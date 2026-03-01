@@ -1,0 +1,120 @@
+@if (selectedProperty()) {
+<div class="container py-5 mt-5">
+    <div class="row g-3 mb-5 overflow-hidden">
+        <div class="col-md-8">
+            <img [src]="selectedProperty().img" class="img-fluid w-100 main-img" alt="Main">
+        </div>
+        <div class="col-md-4">
+            <div class="row g-3">
+                <div class="col-12"><img [src]="selectedProperty().img" class="img-fluid side-img" alt="Side 1"></div>
+                <div class="col-12 position-relative">
+                    <img [src]="selectedProperty().img" class="img-fluid side-img" alt="Side 2">
+                    <button class="btn btn-dark position-absolute bottom-0 end-0 m-3 rounded-pill opacity-75">
+                        View All Photos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-start mb-4">
+                <div>
+                    <h1 class="fw-bold mb-2">{{selectedProperty().title}}</h1>
+                    <p class="text-muted"><i
+                            class="bi bi-geo-alt-fill text-primary me-2"></i>{{selectedProperty().address}}</p>
+                </div>
+                <div class="text-end">
+                    <h2 class="text-primary fw-bold mb-0">${{selectedProperty().price | number}}</h2>
+                    <span class="badge bg-success-subtle text-success rounded-pill">Active Listing</span>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="p-3 bg-body-tertiary rounded-4">
+                        <i class="bi bi-door-open fs-3 text-primary"></i>
+                        <p class="small mb-0 mt-2">{{selectedProperty().specs.beds}} Beds</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 bg-body-tertiary rounded-4">
+                        <i class="bi bi-droplet fs-3 text-primary"></i>
+                        <p class="small mb-0 mt-2">{{selectedProperty().specs.baths}} Baths</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 bg-body-tertiary rounded-4">
+                        <i class="bi bi-bounding-box fs-3 text-primary"></i>
+                        <p class="small mb-0 mt-2">{{selectedProperty().specs.sqft}} Sqft</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 bg-body-tertiary rounded-4">
+                        <i class="bi bi-p-square fs-3 text-primary"></i>
+                        <p class="small mb-0 mt-2">{{selectedProperty().specs.garage}} Garage</p>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="fw-bold mb-3">Amenities</h5>
+            <div class="d-flex flex-wrap gap-2 mb-5">
+                <span *ngFor="let amenity of selectedProperty().amenities"
+                    class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2">{{amenity}}</span>
+            </div>
+
+            <h5 class="fw-bold mb-3">About this Property</h5>
+            <p class="text-muted leading-relaxed mb-5">{{selectedProperty().description || 'No description available for this property.'}}</p>
+
+            <h5 class="fw-bold mb-3">Location</h5>
+            <div
+                class="map-placeholder rounded-4 bg-body-tertiary d-flex align-items-center justify-content-center border">
+                <div class="text-center">
+                    <i class="bi bi-map fs-1 text-muted"></i>
+                    <p class="text-muted">Google Maps Integration Here</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="booking-card p-4 rounded-4 shadow-sm sticky-top" style="top: 100px;">
+                <h5 class="fw-bold mb-4">Schedule a Visit</h5>
+                <form (ngSubmit)="onSubmitVisit()">
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Preferred Date</label>
+                        <input type="date" class="form-control rounded-pill px-3">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Your Name</label>
+                        <input type="text" class="form-control rounded-pill px-3" placeholder="Enter name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Email</label>
+                        <input type="email" class="form-control rounded-pill px-3" placeholder="Enter email">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-bold mt-2">
+                        Book Viewing
+                    </button>
+                </form>
+                <hr class="my-4 opacity-10">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="https://i.pravatar.cc/150?u=agent" class="rounded-circle" width="50" alt="Agent">
+                    <div>
+                        <h6 class="mb-0 fw-bold">Agent Sarah Wilson</h6>
+                        <small class="text-muted">Listing Manager</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+} @else {
+<div class="container py-5 mt-5">
+    <div class="text-center py-5">
+        <h2 class="fw-bold mb-3">Property Not Found</h2>
+        <p class="text-muted mb-4">The property you are looking for does not exist or has been removed.</p>
+        <a routerLink="/properties" class="btn btn-primary rounded-pill px-4 py-2 fw-bold">Back to Listings</a>
+    </div>
+</div>
+}

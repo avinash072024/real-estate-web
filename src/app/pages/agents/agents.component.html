@@ -1,0 +1,44 @@
+<div class="container py-5 mt-5">
+    <div class="text-center my-5">
+        <span class="text-primary fw-bold text-uppercase small ls-wide">The Experts</span>
+        <h1 class="display-5 fw-bold mt-2">Meet Our <span class="text-primary">Trusted Agents</span></h1>
+        <p class="text-muted mx-auto" style="max-width: 600px;">
+            Our team of dedicated professionals is here to guide you through every step of your real estate journey.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        @for (agent of agents; track agent.id) {
+        <div class="col-sm-6 col-lg-3">
+            <div class="agent-card rounded-4 overflow-hidden border-0 shadow-sm bg-body">
+                <div class="agent-img-wrapper position-relative">
+                    <img [src]="agent.img" [alt]="agent.name" class="w-100 agent-img">
+                    <div class="agent-overlay d-flex align-items-end justify-content-center p-3">
+                        <div class="social-pills d-flex gap-2 mb-2">
+                            <a href="#" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
+                                    class="bi bi-linkedin"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
+                                    class="bi bi-envelope-fill"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle btn-sm shadow-sm"><i
+                                    class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 text-center">
+                    <!-- <span class="badge bg-primary-subtle text-primary rounded-pill mb-2 px-3">{{agent.specialty}}</span> -->
+                    <h5 class="fw-bold mb-1">{{agent.name}}</h5>
+                    <p class="text-muted small mb-3">{{agent.role}}</p>
+                    <hr class="opacity-10 my-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small text-muted">Experience</span>
+                        <span class="small fw-bold">{{agent.experience}}</span>
+                    </div>
+                    <button class="btn btn-outline-primary rounded-pill btn-sm w-100 mt-3 fw-semibold">View
+                        Profile</button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

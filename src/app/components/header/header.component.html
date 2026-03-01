@@ -64,7 +64,7 @@
     <div class="container">
         <a class="navbar-brand fw-bold fs-3" routerLink="/" (click)="closeMenu()">
             <i class="bi bi-houses-fill text-primary me-2"></i>
-            <span class="logo-text">MODERN<span class="text-primary">NEST</span></span>
+            <span class="logo-text">{{appName1}}<span class="text-primary"> {{appName2}}</span></span>
         </a>
 
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
@@ -74,7 +74,7 @@
 
         <div class="collapse navbar-collapse" id="mainNav" #navbarCollapse>
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2 mt-3 mt-lg-0">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link px-4 rounded-pill" routerLink="/home" routerLinkActive="active-pill"
                         [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Home</a>
                 </li>
@@ -89,7 +89,13 @@
                 <li class="nav-item">
                     <a class="nav-link px-4 rounded-pill" routerLink="/contact" routerLinkActive="active-pill"
                         (click)="closeMenu()">Contact</a>
+                </li> -->
+                @for (item of navLinks; track item.id) {
+                <li class="nav-item">
+                    <a class="nav-link px-4 rounded-pill" routerLink="{{item.path}}" routerLinkActive="active-pill"
+                        [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">{{item.name}}</a>
                 </li>
+                }
             </ul>
 
             <div class="d-flex align-items-center justify-content-center gap-3 pb-3 pb-lg-0">

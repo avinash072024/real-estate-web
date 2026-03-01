@@ -1,0 +1,72 @@
+.ls-wide {
+    letter-spacing: 1.5px;
+}
+
+.agent-card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05) !important;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+
+        .agent-overlay {
+            opacity: 1;
+        }
+
+        .agent-img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.agent-img-wrapper {
+    height: 320px;
+    overflow: hidden;
+
+    .agent-img {
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+}
+
+.agent-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(var(--bs-primary-rgb), 0.8), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.social-pills {
+    .btn {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+            background-color: var(--bs-primary);
+            color: white;
+        }
+    }
+}
+
+// Dark Mode Tweak
+[data-bs-theme='dark'] {
+    .agent-card {
+        background-color: var(--bs-body-tertiary-bg) !important;
+    }
+
+    .agent-overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    }
+}

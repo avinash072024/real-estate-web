@@ -1,0 +1,57 @@
+.ls-wide {
+    letter-spacing: 2px;
+}
+
+.leading-relaxed {
+    line-height: 1.8;
+}
+
+.main-img {
+    transition: transform 0.5s ease;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+// The Floating Card Effect
+.floating-card {
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    background-color: var(--bs-body-bg);
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+    min-width: 250px;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+}
+
+// Modern Value Cards
+.border-hover {
+    border: 1px solid transparent;
+
+    &:hover {
+        border-color: var(--bs-primary);
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+}
+
+.transition-all {
+    transition: all 0.3s ease-in-out;
+}
+
+// Responsive adjustments
+@media (max-width: 991.98px) {
+    .floating-card {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+// Dark Mode specific background refinement
+[data-bs-theme='dark'] {
+    .bg-body-tertiary {
+        background-color: #1e2125 !important;
+    }
+}
