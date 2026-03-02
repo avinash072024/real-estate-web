@@ -1,0 +1,63 @@
+<header class="fixed-top header-glass mt-3 mx-auto container rounded-pill border shadow-sm">
+    <nav class="navbar navbar-expand-lg py-2 px-lg-4">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" routerLink="/">
+                <!-- <div class="logo-box rounded-circle bg-primary me-2"></div> -->
+                 <i class="bi bi-houses-fill text-primary me-2"></i>
+                <span class="logo-text">{{appName1}}<span class="text-primary"> {{appName2}}</span></span>
+            </a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" (click)="closeMenu()">
+                <i class="bi" [ngClass]="isMenuOpen ? 'bi-x' : 'bi-grid-fill'"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" [class.show]="isMenuOpen" id="mainNav" #navbarCollapse>
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3 rounded-pill" routerLink="/buy"
+                            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3 rounded-pill" routerLink="/rent"
+                            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Rent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3 rounded-pill" routerLink="/agents"
+                            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Agents</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fw-semibold px-3 dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Resources</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-4 p-2 mt-2">
+                            <li><a class="dropdown-item rounded-3 py-2" routerLink="/about">About Us</a></li>
+                            <li><a class="dropdown-item rounded-3 py-2" routerLink="/consultation">Consultation</a></li>
+                            <li>
+                                <hr class="dropdown-divider opacity-10">
+                            </li>
+                            <li><a class="dropdown-item rounded-3 py-2" routerLink="/privacy">Privacy Policy</a></li>
+                        </ul>
+                    </li> -->
+                    @for (item of navLinks; track item.id) {
+                    <li class="nav-item">
+                        <a class="nav-link px-4 rounded-pill" routerLink="{{item.path}}" routerLinkActive="active-pill"
+                            [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">{{item.name}}</a>
+                    </li>
+                    }
+                </ul>
+
+                <div class="d-flex align-items-center gap-3">
+                    <button (click)="toggleTheme()" class="btn btn-icon rounded-circle p-2 border-0 shadow-none"
+                        [title]="isDarkMode ? 'Switch to Light' : 'Switch to Dark'">
+                        <i class="bi fs-5"
+                            [ngClass]="isDarkMode ? 'bi-sun-fill text-warning' : 'bi-moon-stars-fill text-primary'"></i>
+                    </button>
+
+                    <a routerLink="/list-property"
+                        class="btn btn-primary rounded-pill px-4 py-2 fw-bold d-none d-md-block shadow-sm">
+                        List Property
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
