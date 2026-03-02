@@ -19,7 +19,6 @@ export class PropertyDetailsComponent implements OnInit {
   route = inject(ActivatedRoute);
 
   ngOnInit() {
-    debugger;
     this.route.paramMap.subscribe(params => {
       const id = Number(params.get('id'));
 
@@ -28,9 +27,7 @@ export class PropertyDetailsComponent implements OnInit {
       );
     });
 
-    debugger;
     console.log('this.selectedProperty:', this.selectedProperty);
-    debugger;
   }
 
   onSubmitVisit() {
