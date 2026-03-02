@@ -8,7 +8,7 @@ export class Constants {
         { id: 1, name: 'Home', path: '/home' },
         { id: 2, name: 'Properties', path: '/properties' },
         { id: 3, name: 'Agents', path: '/agents' },
-        { id: 4, name: 'About Us', path: '/about' },
+        { id: 4, name: 'About', path: '/about' },
         { id: 5, name: 'Contact', path: '/contact' }
     ];
 

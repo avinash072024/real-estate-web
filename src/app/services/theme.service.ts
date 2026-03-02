@@ -1,3 +1,4 @@
+import { isPlatformBrowser } from '@angular/common';
 import { Injectable, signal } from '@angular/core';
 
 @Injectable({
@@ -20,5 +21,15 @@ export class ThemeService {
 
   private applyTheme(theme: string) {
     document.documentElement.setAttribute('data-bs-theme', theme);
+  }
+
+  getCurrentTheme(): string {
+    if (isPlatformBrowser(this.platformId)) {
+      return document.documentElement.getAttribute('data-bs-theme') || 'light';
+    }
+    return 'light';
+  }
+  platformId(platformId: any) {
+    throw new Error('Method not implemented.');
   }
 }

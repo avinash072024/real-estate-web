@@ -3,10 +3,11 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Constants } from '../../models/constants';
+import { ThemeTogglerComponent } from "../theme-toggler/theme-toggler.component";
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink, RouterLinkActive, ThemeTogglerComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -47,8 +48,9 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('navbarCollapse') navbarCollapse!: ElementRef;
 
-  isScrolled = false;
-  isDarkMode = false;
+  isScrolled: boolean = false;
+  isDarkMode: boolean = false;
+  isMenuOpen: boolean = false;
 
   appName1: string = Constants.APP_NAME_STR1;
   appName2: string = Constants.APP_NAME_STR2;
@@ -81,6 +83,9 @@ export class HeaderComponent implements OnInit {
   closeMenu() {
     if (this.navbarCollapse.nativeElement.classList.contains('show')) {
       this.navbarCollapse.nativeElement.classList.remove('show');
+      this.isMenuOpen = !this.isMenuOpen;
+    } else {
+      this.isMenuOpen = !this.isMenuOpen;
     }
   }
 }

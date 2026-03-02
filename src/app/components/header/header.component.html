@@ -67,12 +67,26 @@
             <span class="logo-text">{{appName1}}<span class="text-primary"> {{appName2}}</span></span>
         </a>
 
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        <!-- <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
             data-bs-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
+        <div class="d-flex align-items-center">
+            <div class="d-block d-md-block d-lg-none me-3">
+                <app-theme-toggler />
+            </div>
+            <button class="d-block d-md-block d-lg-none theme-toggle-btn border-0 shadow" type="button" (click)="closeMenu()">
+                <!-- <i class="bi" [ngClass]="isMenuOpen ? 'bi-x' : 'bi-grid-fill'"></i> -->
 
-        <div class="collapse navbar-collapse" id="mainNav" #navbarCollapse>
+                @if (isMenuOpen) {
+                <i class="bi bi-x" style="font-size: 2rem;"></i>
+                } @else {
+                <i class="bi-grid-fill"></i>
+                }
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" [class.show]="isMenuOpen" id="mainNav" #navbarCollapse>
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2 mt-3 mt-lg-0">
                 <!-- <li class="nav-item">
                     <a class="nav-link px-4 rounded-pill" routerLink="/home" routerLinkActive="active-pill"
@@ -92,18 +106,21 @@
                 </li> -->
                 @for (item of navLinks; track item.id) {
                 <li class="nav-item">
-                    <a class="nav-link px-4 rounded-pill" routerLink="{{item.path}}" routerLinkActive="active-pill"
+                    <a class="nav-link px-4 px-lg-3 px-xl-4 rounded-pill" routerLink="{{item.path}}" routerLinkActive="active-pill"
                         [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">{{item.name}}</a>
                 </li>
                 }
             </ul>
 
             <div class="d-flex align-items-center justify-content-center gap-3 pb-3 pb-lg-0">
-                <button class="btn btn-link nav-link p-1 rounded-pill" (click)="toggleTheme()">
+                <!-- <button class="btn btn-link nav-link p-1 rounded-pill" (click)="toggleTheme()">
                     <i class="bi fs-5"
                         [ngClass]="isDarkMode ? 'bi-sun-fill text-warning' : 'bi-moon-stars-fill text-primary'"></i>
-                </button>
-                <a routerLink="/list-property" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">List Property</a>
+                </button> -->
+                <div class="d-none d-md-none d-lg-block">
+                    <app-theme-toggler />
+                </div>
+                <a routerLink="/list-property" class="btn btn-primary rounded-pill px-4 fw-bold shadow" (click)="closeMenu()">List&nbsp;Property</a>
             </div>
         </div>
     </div>

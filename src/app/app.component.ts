@@ -7,7 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, DisableRightClickDirective],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, DisableRightClickDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

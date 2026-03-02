@@ -40,9 +40,9 @@ export class NavbarComponent implements OnInit {
     document.documentElement.setAttribute('data-bs-theme', theme);
   }
 
-  // toggleMenu() {
-  //   this.isMenuOpen = !this.isMenuOpen;
-  // }
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
   closeMenu() {
     if (this.navbarCollapse.nativeElement.classList.contains('show')) {
