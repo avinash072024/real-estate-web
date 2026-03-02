@@ -75,8 +75,8 @@
                         <div class="card-body p-4">
                             <h5 class="fw-bold mb-2">{{item.title}}</h5>
                             <div class="d-flex gap-3 text-muted small mb-3">
-                                <span><i class="bi bi-door-open me-1"></i>{{item.bhk}} BHK</span>
-                                <span><i class="bi bi-aspect-ratio me-1"></i>{{item.sqft}} Sq.Ft</span>
+                                <span><i class="bi bi-door-open me-1"></i>{{item.specs.beds}} BHK</span>
+                                <span><i class="bi bi-aspect-ratio me-1"></i>{{item.specs.sqft}} Sq.Ft</span>
                             </div>
                             <div class="d-flex flex-wrap gap-1 mb-4">
                                 @for (amenity of item.amenities; track amenity) {
