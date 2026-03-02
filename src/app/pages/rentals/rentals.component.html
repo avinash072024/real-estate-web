@@ -1,0 +1,91 @@
+<div class="container py-5 mt-5">
+    <div class="row align-items-end my-5">
+        <div class="col-lg-7">
+            <span class="text-primary fw-bold small text-uppercase ls-wide">Premium Living</span>
+            <h1 class="display-5 fw-bold mb-3">Explore Rentals <span class="text-primary">Near You</span></h1>
+            <p class="text-muted mb-0">Discover the best apartments, lofts, and houses for rent with flexible lease
+                terms.</p>
+        </div>
+        <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+            <div class="btn-group p-1 bg-body-tertiary rounded-pill border">
+                <button class="btn btn-primary rounded-pill px-4">All Rentals</button>
+                <button class="btn btn-link text-decoration-none text-body px-4">Short Term</button>
+                <button class="btn btn-link text-decoration-none text-body px-4">Long Term</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter-glass p-3 rounded-4 mb-5 shadow-sm border bg-body">
+        <div class="row g-3 align-items-center">
+            <div class="col-md-3">
+                <label class="small fw-bold text-muted ms-2">Location</label>
+                <select class="form-select border-0 bg-transparent shadow-none">
+                    <option>Downtown, LA</option>
+                    <option>Santa Monica</option>
+                    <option>Beverly Hills</option>
+                </select>
+            </div>
+            <div class="col-md-3 border-start">
+                <label class="small fw-bold text-muted ms-2">Monthly Rent</label>
+                <select class="form-select border-0 bg-transparent shadow-none">
+                    <option>$1500 - $3000</option>
+                    <option>$3000 - $5000</option>
+                    <option>$5000+</option>
+                </select>
+            </div>
+            <div class="col-md-3 border-start">
+                <label class="small fw-bold text-muted ms-2">Beds & Baths</label>
+                <select class="form-select border-0 bg-transparent shadow-none">
+                    <option>1+ Bedroom</option>
+                    <option>2+ Bedrooms</option>
+                    <option>3+ Bedrooms</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary w-100 rounded-pill py-2 fw-bold shadow-sm">Show Results</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        @for (item of rentals; track item.id) {
+        <div class="col-md-6 col-lg-4">
+            <div class="rental-card rounded-5 overflow-hidden border-0 shadow-sm bg-body">
+                <div class="position-relative">
+                    <img [src]="item.img" [alt]="item.title" class="w-100 rental-img">
+                    <div class="badge-overlay position-absolute top-0 start-0 m-3 d-flex flex-column gap-2">
+                        <span class="badge bg-white text-dark rounded-pill shadow-sm py-2 px-3 fw-bold">
+                            ${{item.price}} / {{item.period}}
+                        </span>
+                        <span class="badge bg-primary text-white rounded-pill shadow-sm py-2 px-3 fw-bold small">
+                            <i class="bi bi-lightning-fill me-1"></i> {{item.available}}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="fw-bold mb-0">{{item.title}}</h5>
+                        <span class="text-primary small fw-bold">{{item.type}}</span>
+                    </div>
+                    <p class="text-muted small mb-4"><i class="bi bi-geo-alt me-1"></i> Los Angeles, CA</p>
+
+                    <div class="d-flex gap-3 mb-4 pb-3 border-bottom border-opacity-10">
+                        <div class="small text-muted"><i class="bi bi-door-open me-1 text-primary"></i>{{item.beds}}
+                            Beds</div>
+                        <div class="small text-muted"><i class="bi bi-droplet me-1 text-primary"></i>{{item.baths}}
+                            Baths</div>
+                        <div class="small text-muted"><i class="bi bi-wifi me-1 text-primary"></i>Free Fiber</div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary rounded-pill flex-grow-1 fw-bold">Details</button>
+                        <button class="btn btn-primary rounded-pill px-4" title="Book Tour"><i
+                                class="bi bi-calendar-event"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

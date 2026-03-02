@@ -9,6 +9,10 @@ import { AgentsComponent } from './pages/agents/agents.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
+import { BuyHomeComponent } from './pages/buy-home/buy-home.component';
+import { SellHomeComponent } from './pages/sell-home/sell-home.component';
+import { ConsultationComponent } from './pages/consultation/consultation.component';
+import { RentalsComponent } from './pages/rentals/rentals.component';
 
 export const routes: Routes = [
     {
@@ -37,6 +41,18 @@ export const routes: Routes = [
     },
     {
         path: 'terms-of-use', component: TermsConditionsComponent, title: `Terms of Use | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'buy-home', component: BuyHomeComponent, title: `Buy Home | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'sell-home', component: SellHomeComponent, title: `Sell Home | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'rentals', component: RentalsComponent, title: `Rentals | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'consultation', component: ConsultationComponent, title: `Consultation | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
     },
     {
         path: '**', component: NotFoundComponent, title: `404 - Not Found | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`

@@ -1,0 +1,81 @@
+<div class="container py-5 mt-5">
+    <div class="row justify-content-center text-center my-5">
+        <div class="col-lg-8">
+            <span class="badge bg-primary-subtle text-primary rounded-pill mb-3 px-3">Expert Advice</span>
+            <h1 class="display-5 fw-bold mb-4">Book a <span class="text-primary">Professional Consultation</span></h1>
+            <p class="text-muted fs-5">Whether you're a first-time buyer or a seasoned investor, our experts provide the
+                clarity you need to move forward.</p>
+        </div>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-lg-5">
+            <h4 class="fw-bold mb-4">Choose a Service</h4>
+            <div class="service-list d-flex flex-column gap-3">
+                @for (s of services; track s.id) {
+                <div class="service-card p-4 rounded-4 border transition-all cursor-pointer"
+                    [class.active-service]="selectedService === s.id" (click)="selectService(s.id)">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icon-circle rounded-circle bg-primary-subtle text-primary">
+                            <i class="bi {{s.icon}} fs-4"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">{{s.title}}</h6>
+                            <p class="small text-muted mb-0">{{s.desc}}</p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <div class="mt-5 p-4 bg-body-tertiary rounded-4 border border-dashed text-center">
+                <i class="bi bi-patch-check-fill text-primary fs-2 mb-2 d-block"></i>
+                <h6 class="fw-bold">No-Obligation Session</h6>
+                <p class="small text-muted mb-0">Our initial 30-minute consultations are always free of charge.</p>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <h4 class="fw-bold mb-4">Schedule Your Session</h4>
+            <div class="booking-glass p-4 p-lg-5 rounded-5 shadow-lg border bg-body">
+                <!-- <h4 class="fw-bold mb-4">Schedule Your Session</h4> -->
+                <form (ngSubmit)="onBookConsultation()">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control rounded-pill px-3 py-2 bg-body-tertiary border-0"
+                                placeholder="John Doe">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Email Address</label>
+                            <input type="email" class="form-control rounded-pill px-3 py-2 bg-body-tertiary border-0"
+                                placeholder="john@example.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Preferred Date</label>
+                            <input type="date" class="form-control rounded-pill px-3 py-2 bg-body-tertiary border-0">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Preferred Time</label>
+                            <select class="form-select rounded-pill px-3 py-2 bg-body-tertiary border-0">
+                                <option>Morning (9 AM - 12 PM)</option>
+                                <option>Afternoon (1 PM - 5 PM)</option>
+                                <option>Evening (6 PM - 8 PM)</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold">Tell us more about your requirements</label>
+                            <textarea class="form-control rounded-4 bg-body-tertiary border-0" rows="4" style="height: 165px;"
+                                placeholder="I am looking for a 3BHK bungalow in..."></textarea>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-bold shadow-sm">
+                                Confirm Booking Request
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

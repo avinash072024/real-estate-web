@@ -1,0 +1,49 @@
+.leading-relaxed {
+    line-height: 1.8;
+}
+
+.sell-hero {
+    min-height: 100vh;
+    background: radial-gradient(circle at 90% 10%, rgba(var(--bs-primary-rgb), 0.05) 0%, transparent 40%);
+}
+
+.floating-stat {
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 5;
+}
+
+.step-card {
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+
+    .display-1 {
+        margin-top: -20px;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        border-color: var(--bs-primary);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+
+        .display-1 {
+            opacity: 0.2;
+            color: var(--bs-primary);
+            transition: 0.3s;
+        }
+    }
+}
+
+.border-hover {
+    transition: all 0.3s ease-in-out;
+}
+
+// Dark Mode Adjustments
+[data-bs-theme='dark'] {
+    .bg-body-tertiary {
+        background-color: #1e2125 !important;
+    }
+
+    .step-card {
+        background-color: #1a1d20 !important;
+    }
+}

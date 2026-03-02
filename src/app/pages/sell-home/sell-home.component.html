@@ -1,0 +1,104 @@
+<section class="sell-hero d-flex align-items-center py-5 mt-5">
+    <div class="container py-lg-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="badge bg-primary-subtle text-primary rounded-pill mb-3 px-3">Selling Made Simple</span>
+                <h1 class="display-3 fw-bold mb-4">Sell Your Home for the <span class="text-primary">Best Price</span>
+                </h1>
+                <p class="text-muted fs-5 mb-5 leading-relaxed">
+                    We combine cutting-edge AI valuation tools with local expertise to sell your property faster than
+                    the industry average.
+                </p>
+
+                <div class="p-4 bg-body rounded-5 shadow-lg border border-primary border-opacity-10">
+                    <h5 class="fw-bold mb-3">Get an instant estimate</h5>
+                    <div class="input-group input-group-lg bg-body-tertiary rounded-pill overflow-hidden p-1 border">
+                        <input type="text" class="form-control border-0 bg-transparent px-4 fs-6"
+                            placeholder="Enter your home address...">
+                        <button class="btn btn-primary rounded-pill px-4 fw-bold" (click)="onValuationSubmit()">Get
+                            Value</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800"
+                        class="img-fluid rounded-5 shadow-lg" alt="Sell Home">
+                    <div class="floating-stat p-3 rounded-4 bg-body shadow position-absolute bottom-0 start-0 m-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-graph-up-arrow text-success fs-3"></i>
+                            <div>
+                                <h6 class="mb-0 fw-bold">98% Success</h6>
+                                <small class="text-muted">Closing Rate</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our 4-Step <span class="text-primary">Sales Strategy</span></h2>
+        </div>
+        <div class="row g-4">
+            @for (step of steps; track step.id) {
+            <div class="col-md-6 col-lg-3">
+                <div class="step-card p-4 rounded-5 bg-body h-100 border-hover transition-all">
+                    <h1 class="display-1 fw-bold opacity-10 mb-0">{{step.id}}</h1>
+                    <h5 class="fw-bold mt-n3">{{step.title}}</h5>
+                    <p class="small text-muted mb-0">{{step.desc}}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+                <div class="row g-4">
+                    <div class="col-6">
+                        <div class="p-4 bg-body-tertiary rounded-4 text-center">
+                            <i class="bi bi-camera-reels fs-1 text-primary mb-2"></i>
+                            <h6 class="fw-bold">HD Video Tours</h6>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-4 bg-body-tertiary rounded-4 text-center">
+                            <i class="bi bi-megaphone fs-1 text-primary mb-2"></i>
+                            <h6 class="fw-bold">Targeted Ads</h6>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-4 bg-body-tertiary rounded-4 text-center">
+                            <i class="bi bi-people fs-1 text-primary mb-2"></i>
+                            <h6 class="fw-bold">Large Buyer Pool</h6>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-4 bg-body-tertiary rounded-4 text-center">
+                            <i class="bi bi-file-earmark-ruled fs-1 text-primary mb-2"></i>
+                            <h6 class="fw-bold">Legal Support</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2">
+                <h2 class="fw-bold mb-4">Why list with ModernNest?</h2>
+                <p class="text-muted leading-relaxed mb-4">
+                    Selling your home is more than just a transaction; it's a transition. We provide white-glove service
+                    to ensure your property stands out in a crowded market.
+                </p>
+                <button class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">Learn Our Marketing
+                    Secret</button>
+            </div>
+        </div>
+    </div>
+</section>

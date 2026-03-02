@@ -1,0 +1,73 @@
+<div class="container py-5 mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold mb-3 logo-text">Find Your <span class="text-primary">Forever Home</span></h1>
+        <div class="search-container p-2 bg-body-tertiary rounded-pill shadow-sm d-inline-flex align-items-center w-100 mx-auto"
+            style="max-width: 800px;">
+            <i class="bi bi-search ms-3 text-primary"></i>
+            <input type="text" class="form-control border-0 bg-transparent shadow-none"
+                placeholder="Enter city, neighborhood, or ZIP...">
+            <button class="btn btn-primary rounded-pill px-4 py-2 fw-bold d-none d-md-block">Search</button>
+        </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+        <div class="d-flex gap-2">
+            <select class="form-select border-0 bg-body-tertiary rounded-pill px-4">
+                <option>Price: High to Low</option>
+                <option>Price: Low to High</option>
+            </select>
+            <button class="btn btn-outline-primary rounded-pill px-4 d-flex align-items-center">
+                <i class="bi bi-sliders me-2"></i> Filters
+            </button>
+        </div>
+        <span class="text-muted fw-semibold">{{properties.length}} properties available</span>
+    </div>
+
+    <div class="row g-4">
+        @for (p of properties; track p.id) {
+        <div class="col-md-6 col-lg-4">
+            <div class="property-card rounded-5 overflow-hidden border-0 shadow-sm bg-body position-relative">
+                <span class="badge position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 z-1 shadow-sm"
+                    [ngClass]="p.tag === 'Luxury' ? 'bg-dark text-white' : 'bg-primary text-white'">
+                    {{p.tag}}
+                </span>
+
+                <button (click)="toggleFavorite(p.id)"
+                    class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 z-1 shadow-sm fav-btn">
+                    <i class="bi" [ngClass]="p.isFav ? 'bi-heart-fill text-danger' : 'bi-heart'"></i>
+                </button>
+
+                <div class="img-zoom-container">
+                    <img [src]="p.img" class="w-100 property-img" [alt]="p.title">
+                </div>
+
+                <div class="p-4">
+                    <h3 class="fw-bold mb-1">${{p.price | number}}</h3>
+                    <h5 class="text-muted small fw-bold mb-3">{{p.title}}</h5>
+
+                    <div class="d-flex justify-content-between p-3 bg-body-tertiary rounded-4 mb-4">
+                        <div class="text-center">
+                            <i class="bi bi-door-open d-block text-primary mb-1"></i>
+                            <span class="small fw-bold">{{p.specs.beds}} Beds</span>
+                        </div>
+                        <div class="text-center border-start border-end px-3">
+                            <i class="bi bi-droplet d-block text-primary mb-1"></i>
+                            <span class="small fw-bold">{{p.specs.baths}} Baths</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="bi bi-bounding-box d-block text-primary mb-1"></i>
+                            <span class="small fw-bold">{{p.specs.sqft}} Sqft</span>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-flex">
+                        <button class="btn btn-primary rounded-pill w-100 py-2 fw-bold">View Details</button>
+                        <button class="btn btn-outline-primary rounded-pill py-2 px-3"><i
+                                class="bi bi-chat-dots"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
