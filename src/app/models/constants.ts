@@ -298,6 +298,17 @@ export class Constants {
             socials: { linkedin: '#', instagram: '#' },
             specialty: 'Expert in luxury property sales, helping clients find and purchase high-end homes with premium amenities and exclusive features.'
         },
+        {
+            id: 16,
+            name: 'Ethan Lee',
+            role: 'Urban Development Consultant',
+            email: 'ethan.lee@modernnest.com',
+            contact: '+1 (555) 678-9012',
+            experience: '12 Years',
+            img: 'https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=400&q=80',
+            socials: { linkedin: '#', instagram: '#' },
+            specialty: 'Specializes in urban planning and development projects, guiding clients through zoning laws, building permits, and community impact assessments.'
+        }
     ];
 
     public static MOCK_AMENITIES_LIST = ['Swimming Pool', 'Gym', 'Garden', 'Security', 'Parking', 'Elevator', 'Home Cinema', 'Solar Panels'];

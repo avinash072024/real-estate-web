@@ -1,11 +1,12 @@
 import { NgClass } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Constants } from '../../models/constants';
+import { ThemeTogglerComponent } from '../theme-toggler/theme-toggler.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgClass, RouterLink, RouterLinkActive],
+  imports: [NgClass, RouterLink, RouterLinkActive, ThemeTogglerComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -13,12 +14,18 @@ export class NavbarComponent implements OnInit {
   @ViewChild('navbarCollapse') navbarCollapse!: ElementRef;
 
   isDarkMode: boolean = false;
+  isScrolled: boolean = false;
   isMenuOpen: boolean = false;
 
   appName1: string = Constants.APP_NAME_STR1;
   appName2: string = Constants.APP_NAME_STR2;
 
   navLinks = Constants.NAV_LINKS;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 20;
+  }
 
   ngOnInit() {
     // Load the manually saved theme or default to light
