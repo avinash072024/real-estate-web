@@ -13,6 +13,7 @@ import { BuyHomeComponent } from './pages/buy-home/buy-home.component';
 import { SellHomeComponent } from './pages/sell-home/sell-home.component';
 import { ConsultationComponent } from './pages/consultation/consultation.component';
 import { RentalsComponent } from './pages/rentals/rentals.component';
+import { ListPropertyComponent } from './pages/list-property/list-property.component';
 
 export const routes: Routes = [
     {
@@ -53,6 +54,9 @@ export const routes: Routes = [
     },
     {
         path: 'consultation', component: ConsultationComponent, title: `Consultation | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'list-property', component: ListPropertyComponent, title: `List Your Property | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
     },
     {
         path: '**', component: NotFoundComponent, title: `404 - Not Found | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
