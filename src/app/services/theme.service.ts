@@ -1,26 +1,38 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Injectable, signal } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID, Renderer2, RendererFactory2, signal } from '@angular/core';
+import { Constants } from '../models/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-  // Use Angular Signals for a reactive UI
-  theme = signal<string>(localStorage.getItem('user-theme') || 'light');
+  private renderer: Renderer2;
+  private themeKey = `${Constants.APP_NAME_STR1}-${Constants.APP_NAME_STR2}-User-Theme`.toLowerCase(); // Unique key for localStorage
 
-  constructor() {
-    this.applyTheme(this.theme());
+  constructor(
+    rendererFactory: RendererFactory2,
+    @Inject(PLATFORM_ID) private platformId: Object // Vital for SSR/Hydration in Angular 20
+  ) {
+    this.renderer = rendererFactory.createRenderer(null, null);
   }
 
+  // 1. Call this immediately on app startup
+  initTheme() {
+    if (isPlatformBrowser(this.platformId)) {
+      const savedTheme = localStorage.getItem(this.themeKey) || 'dark';
+      this.applyTheme(savedTheme);
+    }
+  }
+
+  // 2. Logic to switch and save
   toggleTheme() {
-    const newTheme = this.theme() === 'light' ? 'dark' : 'light';
-    this.theme.set(newTheme);
-    localStorage.setItem('user-theme', newTheme);
+    const newTheme = this.getCurrentTheme() === 'light' ? 'dark' : 'light';
     this.applyTheme(newTheme);
+    localStorage.setItem(this.themeKey, newTheme);
   }
 
   private applyTheme(theme: string) {
-    document.documentElement.setAttribute('data-bs-theme', theme);
+    this.renderer.setAttribute(document.documentElement, 'data-bs-theme', theme);
   }
 
   getCurrentTheme(): string {
@@ -28,8 +40,5 @@ export class ThemeService {
       return document.documentElement.getAttribute('data-bs-theme') || 'light';
     }
     return 'light';
-  }
-  platformId(platformId: any) {
-    throw new Error('Method not implemented.');
   }
 }
